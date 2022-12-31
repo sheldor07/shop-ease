@@ -5,3 +5,19 @@
 .card{
     margin:10px;
 }
+.navbar-brand{
+    font-size:20pt;
+}
+
+/* for add_products.html */
+.form-group{
+    font-size: 20pt;
+    margin:20px;
+}
+
+#btnAddPdt{
+    margin:0% auto;
+    width:50%;
+    text-align:center;
+
+}

@@ -24,7 +24,7 @@ function createProductCard(product){
           <h5 class="card-title product-name">${product.name}</h5>
           <p class="card-text product-manufacturer">${product.manufacturer}</p>
           <p class="card-text product-price"><b>${product.price}</b></p>
-          <a href="#" class="btn btn-primary">Buy!</a>
+          <a href="#" class="btn btn-primary">Buy</a>
         </div>
       </div>
     </div>
