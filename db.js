@@ -6,41 +6,44 @@ const db = new Sequelize("shoppingdb","shopper","shoppingpass",{
     dialect:"mysql",
     pool:{
         min:0,
-        max:2,
+        max:5,
     }
 })
 //we're creating a class called User and a class called Product
 const User = db.define('users',{
     id:{
-        type:Sequelize.DataTypes.INTEGER,
+        type:Sequelize.INTEGER,
         autoIncrement:true,
         primaryKey:true,
     },
     name:{
-        type:Sequelize.DataTypes.STRING,
+        type:Sequelize.STRING,
         allowNull:false
 
     }
 })
-const Product = db.define('products',{
-    id:{
-        type:Sequelize.DataTypes.INTEGER,
-        autoIncrement:true,
-        primaryKey:true,
+const Product = db.define('product', {
+    id: {
+      type:Sequelize.INTEGER,
+      autoIncrement:true,
+      primaryKey:true,
     },
-    name:{
-        type:Sequelize.DataTypes.STRING,
-        allowNull:false
-
+    name: {
+      type: Sequelize.STRING,
+      allowNull: false
     },
-    manufacturer:{
-        type:Sequelize.DataTypes.STRING,
+    price: {
+      type: Sequelize.FLOAT,
+      allowNull: false,
+      defaultValue:0.0
     },
-    price:{
-        defaultValue:0.0,
-        type:Sequelize.DataTypes.FLOAT,
-        allowNull:false,
+    manufacturer: {
+      type: Sequelize.STRING,
     }
-})
+  })
 
-exports = module.exports({User,Product})
+db.sync() 
+    .then(()=>{ console.log("database has been created")})
+    .catch((err)=>{ console.log(err)})
+
+exports = module.exports=({User,Product})
