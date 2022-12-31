@@ -8,7 +8,9 @@
 .navbar-brand{
     font-size:20pt;
 }
-
+.shopping-cart{
+    margin-left:75vw;
+}
 /* for add_products.html */
 .form-group{
     font-size: 20pt;
