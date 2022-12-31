@@ -1,4 +1,4 @@
-# shop-ease
+# ShopEase
 ## Shop-Ease is a web-app that allows users to add and view products to and from a database.
 The following is the landing page.
 <img width="1680" alt="Screenshot 2022-12-31 at 11 43 34 PM" src="https://user-images.githubusercontent.com/50955708/210152322-c0937e05-ad94-4a18-8eec-1f18f363ba0b.png">
