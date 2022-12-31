@@ -4,6 +4,17 @@ function fetchProducts(done){
     })
     //sends get request to /products and returns array of products (json obj)
 }
+function addProduct(name,manu,price,done){
+    $.post('/products',{
+        name:name,
+        manufacturer:manu,
+        price:price,
+    },function(data){
+        done(data)
+    }
+
+    )
+}
 function createProductCard(product){
     //takes product object and creates card
     return $(`<div class="col-4">
@@ -19,14 +30,3 @@ function createProductCard(product){
     </div>
     `)
 }
-$(
-    function(){
-        let productList=$('#product-list')
-        fetchProducts(function (products){
-            productList.empty()
-            for (product of products){
-                productList.append(createProductCard(product))
-            }
-        })
-    }
-)
