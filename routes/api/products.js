@@ -4,12 +4,12 @@ const Product=require('../../db').Product
 route.get('/',(req,res)=>{
     //we want to send array of users from db
     Product.findAll()
-        .then((users) =>{
+        .then((products) =>{
             res.status(200).send(products)
         })
         .catch((err)=>{
             res.status(500).send({
-                error:"could not receive products"
+                error:err.message
             })
         })
 

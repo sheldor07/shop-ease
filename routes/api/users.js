@@ -17,7 +17,7 @@ route.get('/',(req,res)=>{
 
 })
 
-route.post('/',(req,res)=>{
+route.post('/',async (req,res)=>{
     //we expect req to have name in it
     User.create({
         name:req.body.name
@@ -25,7 +25,7 @@ route.post('/',(req,res)=>{
         res.status(201).send(user)
     }).catch((err)=>{
         res.status(501).send({
-            error:"could not add user"
+            message:err.message
         })
     })
 
